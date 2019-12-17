@@ -122,3 +122,28 @@ function isBalanced(t) {
 
 // console.log(isBalanced(t4));
 
+
+
+
+//Question #09: Are they the same BSTs?
+
+const exArray1 = [3, 5, 4, 6, 1, 0, 2];
+const exArray2 = [3, 1, 5, 2, 4, 6, 0];
+// const exArray3 = [50, 5, 4, 16, 1, 0, 2];
+// const exArray4 = [3, 1, 5, 12, 4, 65, 0];
+
+function areTheyTheSame(array1, array2) {
+	if (array1.length !== array2.length) {
+		return false;
+	}
+	let arr1 = array1.sort(function(a, b){return a-b;});
+	let arr2 = array2.sort(function(a, b){return a-b;});
+	for(let i = 0; i < array1.length; i++) {
+		if(arr1[i] !== arr2[i]) {
+			return false;
+		}
+	}
+	return true;
+}
+
+console.log(areTheyTheSame(exArray1, exArray2));
