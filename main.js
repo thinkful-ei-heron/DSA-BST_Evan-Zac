@@ -87,14 +87,14 @@ function thirdLargest(t) {
 
 //Question 08: Balanced BST
 
-const t8 = new BinarySearchTree();
-t8.insert(4, 1);
-t8.insert(2, 1);
-t8.insert(3, 1);
-t8.insert(1, 1);
-t8.insert(6, 1);
-t8.insert(5, 1);
-t8.insert(7, 1);
+const BalancedBST = new BinarySearchTree();
+BalancedBST.insert(4, 1);
+BalancedBST.insert(2, 1);
+BalancedBST.insert(3, 1);
+BalancedBST.insert(1, 1);
+BalancedBST.insert(6, 1);
+BalancedBST.insert(5, 1);
+BalancedBST.insert(7, 1);
 
 function checkheight(t) {
 	if (t === null) {
@@ -120,5 +120,5 @@ function isBalanced(t) {
 	}
 }
 
-console.log(isBalanced(t4));
+// console.log(isBalanced(t4));
 
