@@ -29,3 +29,10 @@ A			S
 		O  S   U
 	   N      T
 ```
+
+## 4) What does this program do?
+- It looks like this program recursively adds every value in the tree.
+- The runtime is linear
+
+## 5) Height of a BST
+- The time complexity is linear
