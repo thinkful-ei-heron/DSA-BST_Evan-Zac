@@ -27,6 +27,7 @@ t4.insert(2, 2);
 t4.insert(1, 1);
 t4.insert(4, 4);
 t4.insert(5, 5);
+t4.insert(7, 7);
 
 // console.log(tree(t4));
 
@@ -64,3 +65,19 @@ function isItBST(t) {
 
 // console.log(isItBST(t4));
 // console.log(isItBST(tBackward));
+
+function thirdLargest(t) {
+	const arr = [];
+	const subRec = (t) => {
+		if (!t) return;
+		arr.push(t.key);
+		subRec(t.left);
+		subRec(t.right);
+	};
+
+	subRec(t);
+	arr.sort();
+	return arr[arr.length - 3];	
+}
+
+console.log(thirdLargest(t4));
