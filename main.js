@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 'use strict';
 
 const BinarySearchTree = require('./BinarySearchTree');
@@ -80,4 +81,44 @@ function thirdLargest(t) {
 	return arr[arr.length - 3];	
 }
 
-console.log(thirdLargest(t4));
+// console.log(thirdLargest(t4));
+
+
+
+//Question 08: Balanced BST
+
+const t8 = new BinarySearchTree();
+t8.insert(4, 1);
+t8.insert(2, 1);
+t8.insert(3, 1);
+t8.insert(1, 1);
+t8.insert(6, 1);
+t8.insert(5, 1);
+t8.insert(7, 1);
+
+function checkheight(t) {
+	if (t === null) {
+		return 0;
+	} //break case
+	let leftHeight = checkheight(t.left);
+	let rightHeight = checkheight(t.right);
+	let heightDiff = leftHeight - rightHeight;
+	if(Math.abs(heightDiff) > 1) {
+		return -1;
+	} else {
+		return Math.max(leftHeight, rightHeight) + 1;
+	}
+}
+function isBalanced(t) {
+	if (t === null) {
+		return true; //break case
+	}
+	if(checkheight(t) === -1){
+		return false;
+	} else {
+		return isBalanced(t.left) && isBalanced(t.right);
+	}
+}
+
+console.log(isBalanced(t4));
+
